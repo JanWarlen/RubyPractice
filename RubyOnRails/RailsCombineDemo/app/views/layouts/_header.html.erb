@@ -1,0 +1,14 @@
+<nav>
+  <a href="/"><%= ApplicationHelper::APP_NAME %></a>
+
+  <% if user_signed_in? %>
+    <ul>
+      <li>
+        <%= link_to "个人信息编辑", edit_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to "退出", destroy_user_session_path, method: :delete %>
+      </li>
+    </ul>
+  <% end %>
+</nav>

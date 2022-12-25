@@ -61,3 +61,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # .env
 gem 'dotenv-rails', groups: [:development, :test]
+
+# 登录认证
+gem 'devise'
