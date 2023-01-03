@@ -75,6 +75,7 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: ENV.fetch('MAILER_SMTP_ADDRESS'),
@@ -82,6 +83,6 @@ Rails.application.configure do
     authentication: ENV.fetch('MAILER_SMTP_AUTHENTICATION'),
     user_name: ENV.fetch('MAILER_SMTP_USER_NAME'),
     password: ENV.fetch('MAILER_SMTP_PASSWORD'),
-    enable_starttls_auto: ENV.fetch('MAILER_SMTP_ENABLE_STARTTLS_AUTO')
+    enable_starttls_auto: ActiveModel::Type::Boolean.new.cast(ENV.fetch('MAILER_SMTP_ENABLE_STARTTLS_AUTO', true))
   }
 end

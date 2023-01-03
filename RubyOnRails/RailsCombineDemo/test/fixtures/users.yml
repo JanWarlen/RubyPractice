@@ -10,6 +10,7 @@
 #  encrypted_password     :string           default(""), not null
 #  failed_attempts        :integer          default(0), not null
 #  locked_at              :datetime
+#  name                   :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
@@ -22,6 +23,7 @@
 #
 #  index_users_on_confirmation_token    (confirmation_token) UNIQUE
 #  index_users_on_email                 (email) UNIQUE
+#  index_users_on_name                  (name) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
 #
