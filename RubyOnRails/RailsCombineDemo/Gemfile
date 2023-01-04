@@ -64,5 +64,8 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 # 登录认证
 gem 'devise'
-
+# 异步任务
 gem 'sidekiq'
+# 图片处理
+gem "image_processing", ">= 1.2"
+

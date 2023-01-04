@@ -34,6 +34,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :timeoutable
 
+  has_one_attached :avatar
+
   validates :name,
             presence: true,
             uniqueness: { case_sensitive: false}
