@@ -72,3 +72,5 @@ gem "image_processing", ">= 1.2"
 gem 'kaminari'
 # 统计计数
 gem 'counter_culture'
+# 权限管理
+gem 'activeadmin'

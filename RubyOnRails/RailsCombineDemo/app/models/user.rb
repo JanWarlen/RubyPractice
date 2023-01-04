@@ -15,6 +15,7 @@
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
+#  role                   :integer
 #  unconfirmed_email      :string
 #  unlock_token           :string
 #  created_at             :datetime         not null
@@ -34,6 +35,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :timeoutable
+  enum role: { user: 0, admin: 1 }
 
   has_many :posts, inverse_of: :user
 
@@ -41,7 +43,7 @@ class User < ApplicationRecord
 
   validates :name,
             presence: true,
-            uniqueness: { case_sensitive: false}
+            uniqueness: { case_sensitive: false }
   validates_format_of :name, with: /^[a-zA-Z0-9_¥.]*$/, multiline: true
   validate :validate_name
 
