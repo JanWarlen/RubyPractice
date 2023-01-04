@@ -68,4 +68,5 @@ gem 'devise'
 gem 'sidekiq'
 # 图片处理
 gem "image_processing", ">= 1.2"
-
+# 分页组件
+gem 'kaminari'

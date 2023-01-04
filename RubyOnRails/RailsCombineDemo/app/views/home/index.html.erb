@@ -15,4 +15,18 @@
       </div>
     </div>
   </div>
+
+  <div>
+    <%= form_with model: Post.new do |f| %>
+      <div class="">
+        <%= f.text_field :body, class: "", placeholder: "What do we do now?" %>
+
+        <span class="">
+          <%= f.submit "投稿", class: "" %>
+        </span>
+      </div>
+    <% end %>
+    <%= render partial: "post", collection: @posts %>
+    <%= paginate @posts %>
+  </div>
 </div>

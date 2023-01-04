@@ -34,6 +34,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :timeoutable
 
+  has_many :posts, inverse_of: :user
+
   has_one_attached :avatar
 
   validates :name,

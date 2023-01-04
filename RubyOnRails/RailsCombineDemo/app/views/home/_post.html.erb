@@ -1,0 +1,12 @@
+<div style="border:2px solid black;">
+  <div class="">
+    <%= image_tag post.user.avatar.variant(resize: "128x128!"), class: "rounded-circle m-4" %>
+  </div>
+  <div class="">
+    <p class="">
+      <strong><%= "@#{post.user.name}" %></strong>
+        <span class=""><%= time_ago_in_words(post.created_at) %> ago</span>
+    </p>
+    <%= post.body %>
+  </div>
+</div>
