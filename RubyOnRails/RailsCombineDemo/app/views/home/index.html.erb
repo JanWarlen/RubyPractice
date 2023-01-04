@@ -11,6 +11,8 @@
       <div class="">
         <h4 class=""><%= "@#{@user.name}" %></h4>
         <p class="">
+          <span><%= "#{@user.created_month}登录" %></span><br/>
+          <span><%= @user.posts_count %>稿件</span>
         </p>
       </div>
     </div>

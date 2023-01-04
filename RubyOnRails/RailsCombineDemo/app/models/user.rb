@@ -11,6 +11,7 @@
 #  failed_attempts        :integer          default(0), not null
 #  locked_at              :datetime
 #  name                   :string
+#  posts_count            :integer          default(0), not null
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
@@ -70,5 +71,9 @@ class User < ApplicationRecord
       ["lower(name) = :value or lower(email) = :value",
        { value: login.downcase }]
     ).first
+  end
+
+  def created_month
+    created_at.strftime('%Y年%m月')
   end
 end

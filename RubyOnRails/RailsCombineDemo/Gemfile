@@ -70,3 +70,5 @@ gem 'sidekiq'
 gem "image_processing", ">= 1.2"
 # 分页组件
 gem 'kaminari'
+# 统计计数
+gem 'counter_culture'
